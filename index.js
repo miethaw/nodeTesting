@@ -19,9 +19,10 @@ app.use(bodyParser.json());
 app.use('/travel-records', userRouter);
 
 db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password:'root',
+    host: '172.104.40.242',
+    port:'3306',
+    user: 'miemie',
+    password:'209851@ungAkn',
     database:'travel'
 })
 

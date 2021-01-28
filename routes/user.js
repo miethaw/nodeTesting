@@ -16,7 +16,7 @@ router.get('/people/:id', (req, res) => {
 })
 
 router.get('/list',(req,res)=>{
-    let sql = `select * from Travel_records`;
+    let sql = `select * from travel_records`;
     db.query(sql,(err,data,fields)=>{
         if(err) throw err;
         res.json({
@@ -29,7 +29,7 @@ router.get('/list',(req,res)=>{
 
 
 // router.post('/new-travel-records',(req,res)=>{
-//     let sql= `INSERT INTO Travel_records(name,NRC,Place_From,Place_To,Go_With) VALUES(?)`;
+//     let sql= `INSERT INTO travel_records(name,NRC,Place_From,Place_To,Go_With) VALUES(?)`;
 //     console.log("Name",req)
 //     let values=[
 //         req.body.name,
@@ -48,7 +48,7 @@ router.get('/list',(req,res)=>{
 //     })
 // })
 router.post('/new-travel-records', function(req, res) {
-    let sql = `INSERT INTO Travel_records(name,NRC,Place_From,Place_To,Go_With) VALUES (?)`;
+    let sql = `INSERT INTO travel_records(name,NRC,Place_From,Place_To,Go_With) VALUES (?)`;
 
     let values = [
         req.body.name,
@@ -69,7 +69,7 @@ router.post('/new-travel-records', function(req, res) {
   router.get('/test',(req,res)=>{
     // return res.json(req.query);
     console.log(">>>",req.query.from)
-    let sql= `select * from Travel_records where Place_From=${req.query.from}`;
+    let sql= `select * from travel_records where Place_From=${req.query.from}`;
     db.query(sql,(err,data,fields)=>{
         if(err) throw err;
         res.json({
